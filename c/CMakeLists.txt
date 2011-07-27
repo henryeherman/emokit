@@ -37,6 +37,8 @@ set(LIBEPOC_HEADERS include/libepoc.h)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(examples/epocd)
 ADD_SUBDIRECTORY(examples/emokit_osc)
+ADD_SUBDIRECTORY(examples/epoc_svr)
+
 
 ##########################################
 ##       PKGCONFIG file                ###
