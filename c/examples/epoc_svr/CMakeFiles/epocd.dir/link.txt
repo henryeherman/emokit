@@ -1,0 +1,1 @@
+/usr/bin/gcc     CMakeFiles/epocd.dir/epocd.c.o  -o ../../bin/epocd -rdynamic -L/usr/local/lib ../../lib/libepoc.a -lmcrypt -lusb-1.0 -Wl,-rpath,/usr/local/lib:/usr/local/lib 

@@ -45,9 +45,9 @@ typedef struct {
 } epoc_device;
 #endif
 /// Vendor ID for all omron health devices
-const static uint32_t EPOC_VID = 0x21a1;
+const static uint32_t EPOC_VID = 0x1234;
 /// Product ID for all omron health devices
-const static uint32_t EPOC_PID = 0x0001;
+const static uint32_t EPOC_PID = 0xed02;
 
 /// Out endpoint for all omron health devices
 const static uint32_t EPOC_OUT_ENDPT = 0x02;
