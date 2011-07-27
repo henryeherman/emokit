@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/henry/src/emokit/c/examples/epoc_svr/epoc_svr.c
+/home/henry/src/hemokit/emokit/c/examples/epoc_svr/epoc_svr.c
 sys/types.h
 -
 sys/socket.h
@@ -25,8 +25,10 @@ stdlib.h
 -
 string.h
 -
+inttypes.h
+-
 libepoc.h
-/home/henry/src/emokit/c/examples/epoc_svr/libepoc.h
+/home/henry/src/hemokit/emokit/c/examples/epoc_svr/libepoc.h
 
 include/libepoc.h
 stdio.h

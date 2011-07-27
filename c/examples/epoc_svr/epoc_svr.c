@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <inttypes.h>
 #include "libepoc.h"
 
 
@@ -62,35 +63,53 @@ int main(int argc, char **argv)
 		fputs("Bad headset type argument\nExpected: epocd [consumer|research|special] source [dest]\n", stderr);
 		return 1;
 	}
-  
+    printf("Server listening\r\n");
 	epoc_init(type);
-
-	d = epoc_create();
-	printf("Current epoc devices connected: %d\n", epoc_get_count(d, EPOC_VID, EPOC_PID));
-	if(epoc_open(d, EPOC_VID, EPOC_PID, 0) != 0)
-	{
-		printf("CANNOT CONNECT\n");
-		return 1;
-	}
-    listen(server_sockfd, 5);
+    
 	while(1)
 	{
+        uint64_t count = 0;
+        listen(server_sockfd, 5);
         client_len = sizeof(client_address);
+        printf("Wainting for client ....\r\n");
         client_sockfd = accept( server_sockfd, (struct sockaddr *)&client_address, &client_len);
+        printf("Connect to EPOC\r\n");
+        d = epoc_create();
+        printf("Current epoc devices connected: %d\n", epoc_get_count(d, EPOC_VID, EPOC_PID));
+        if(epoc_open(d, EPOC_VID, EPOC_PID, 0) != 0)
+        {
+            printf("CANNOT CONNECT\r\n");
+            return 1;
+        }
+        
 		while(epoc_read_data(d, data) > 0)
 		{
+            uint32_t n = 0;
 			epoc_get_next_frame(&frame, data);
+            /*frame.F3\FC6\P7\T8\F7\F8\T7\P8\AF4\F4\AF3\O2\O1\FC5*/
             sprintf(buffer,"%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n", frame.gyroX, frame.gyroY, frame.F3, 
                                        frame.FC6, frame.P7, frame.P7, frame.T8,
                                        frame.F7, frame.F8, frame.T7, frame.P8,
                                        frame.AF4, frame.F4, frame.AF3, frame.O2,
                                        frame.O1, frame.FC5);
-/*frame.F3\FC6\P7\T8\F7\F8\T7\P8\AF4\F4\AF3\O2\O1\FC5 */
-            write(client_sockfd, buffer, strlen(buffer));
+                                       
+            //printf("Writing.\r\n");
+            n = send(client_sockfd, buffer, strlen(buffer),0);
+            //printf("Done.\r\n");
+            count = count + n; 
+            if(n < 0) {
+                printf("Write failed");
+                break;
+            } else {
+                //printf("%lu\r",(unsigned long)count);
+            }
         }
+        epoc_close(d);
+        printf("Close epoc\r\n");
     }
     close(client_sockfd);
-    epoc_close(d);
+    printf("Close socket\r\n");
     epoc_delete(d);
+    printf("Delete epoc\r\n");
 	return 0;
 }

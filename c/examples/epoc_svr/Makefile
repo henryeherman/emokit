@@ -36,10 +36,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/henry/src/emokit/c
+CMAKE_SOURCE_DIR = /home/henry/src/hemokit/emokit/c
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/henry/src/emokit/c
+CMAKE_BINARY_DIR = /home/henry/src/hemokit/emokit/c
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -107,14 +107,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/henry/src/emokit/c && $(CMAKE_COMMAND) -E cmake_progress_start /home/henry/src/emokit/c/CMakeFiles /home/henry/src/emokit/c/examples/epoc_svr/CMakeFiles/progress.marks
-	cd /home/henry/src/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/henry/src/emokit/c/CMakeFiles 0
+	cd /home/henry/src/hemokit/emokit/c && $(CMAKE_COMMAND) -E cmake_progress_start /home/henry/src/hemokit/emokit/c/CMakeFiles /home/henry/src/hemokit/emokit/c/examples/epoc_svr/CMakeFiles/progress.marks
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/henry/src/hemokit/emokit/c/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/henry/src/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/clean
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/clean
 .PHONY : clean
 
 # The main clean target
@@ -123,22 +123,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/henry/src/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/preinstall
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/henry/src/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/preinstall
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/henry/src/emokit/c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/henry/src/hemokit/emokit/c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/epoc_svr/CMakeFiles/epoc_svr.dir/rule:
-	cd /home/henry/src/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/CMakeFiles/epoc_svr.dir/rule
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f CMakeFiles/Makefile2 examples/epoc_svr/CMakeFiles/epoc_svr.dir/rule
 .PHONY : examples/epoc_svr/CMakeFiles/epoc_svr.dir/rule
 
 # Convenience name for target.
@@ -147,7 +147,7 @@ epoc_svr: examples/epoc_svr/CMakeFiles/epoc_svr.dir/rule
 
 # fast build rule for target.
 epoc_svr/fast:
-	cd /home/henry/src/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/build
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/build
 .PHONY : epoc_svr/fast
 
 epoc_svr.o: epoc_svr.c.o
@@ -155,7 +155,7 @@ epoc_svr.o: epoc_svr.c.o
 
 # target to build an object file
 epoc_svr.c.o:
-	cd /home/henry/src/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/epoc_svr.c.o
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/epoc_svr.c.o
 .PHONY : epoc_svr.c.o
 
 epoc_svr.i: epoc_svr.c.i
@@ -163,7 +163,7 @@ epoc_svr.i: epoc_svr.c.i
 
 # target to preprocess a source file
 epoc_svr.c.i:
-	cd /home/henry/src/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/epoc_svr.c.i
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/epoc_svr.c.i
 .PHONY : epoc_svr.c.i
 
 epoc_svr.s: epoc_svr.c.s
@@ -171,7 +171,7 @@ epoc_svr.s: epoc_svr.c.s
 
 # target to generate assembly for a file
 epoc_svr.c.s:
-	cd /home/henry/src/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/epoc_svr.c.s
+	cd /home/henry/src/hemokit/emokit/c && $(MAKE) -f examples/epoc_svr/CMakeFiles/epoc_svr.dir/build.make examples/epoc_svr/CMakeFiles/epoc_svr.dir/epoc_svr.c.s
 .PHONY : epoc_svr.c.s
 
 # Help Target
@@ -201,6 +201,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/henry/src/emokit/c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/henry/src/hemokit/emokit/c && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
