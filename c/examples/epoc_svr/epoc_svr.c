@@ -94,14 +94,14 @@ int main(int argc, char **argv)
                                        frame.O1, frame.FC5);
                                        
             //printf("Writing.\r\n");
-            n = send(client_sockfd, buffer, strlen(buffer),0);
+            n = send(client_sockfd, buffer, strlen(buffer),MSG_DONTWAIT);
             //printf("Done.\r\n");
             count = count + n; 
             if(n < 0) {
                 printf("Write failed");
                 break;
             } else {
-                //printf("%lu\r",(unsigned long)count);
+                printf("%lu\r",(unsigned long)count);
             }
         }
         epoc_close(d);
