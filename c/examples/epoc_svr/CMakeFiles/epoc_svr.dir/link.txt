@@ -1,1 +1,0 @@
-/usr/bin/gcc     CMakeFiles/epoc_svr.dir/epoc_svr.c.o  -o ../../bin/epoc_svr -rdynamic -L/usr/local/lib ../../lib/libepoc.a -lmcrypt -lusb-1.0 -Wl,-rpath,/usr/local/lib:/usr/local/lib 
